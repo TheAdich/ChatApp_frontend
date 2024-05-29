@@ -56,7 +56,7 @@ const Adduser = ({members,setMembers}) => {
         <form className='userSearchBar' onSubmit={(e)=>e.preventDefault()}>
             <input type='text' placeholder='Type username of user' value={query} onChange={(e)=>setQuery(e.target.value)}></input>
         </form>
-        <div className='result_section'>
+        <div className='result_section' style={{"overflowY":"scroll"}}>
         {results.filter(user=>user.name!==authorisedUser.name).map((user)=>(
             
             <div className='resultedUser'>

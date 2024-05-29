@@ -36,18 +36,17 @@ const handleUserSearch = () => {
     return (
         <div className='sidebar_section'>
             <div className='searchIcon' onClick={()=>handleUserSearch()}>
-                <p style={{'fontSize':'1.6rem'}}>Search User</p>
-                <img src={srchIcon} style={{'width':'1.8rem','marginLeft':'0.5rem'}}></img>
+                <p style={{'fontSize':'1.2rem', 'color':'black'}}>Click to search User</p>
+                <img src={srchIcon} style={{'width':'1.4rem','marginLeft':'0.5rem'}}></img>
             </div>
             <div className='all_users'>
                 {chat.map((e) => (
                     <div key={e._id} className='sidebar_user' onClick={() => handleGetid(e)}>
-                        <img src={e.pic} style={{ width: '3vw','height':'3vw', "border":'none','borderRadius':'50%'}}></img>
+                        <img src={e.pic} style={{ width: '2.5vw','height':'2.5vw', "border":'none','borderRadius':'50%'}}></img>
                         <div className='user_attribute'>
-                            <p>{e.chatName}</p>
-                            {e.messages[0] ? <p>{e.messages[0].content.slice(0, 15) + "..."}</p> : <p>Type something to chat!</p>}
+                            <p className='user_chatgrp_name'>{e.chatName.toUpperCase()}</p>
+                            {e.messages[0] ? <p style={{'fontSize':'0.8rem'}}>{e.messages[0].content.slice(0, 15) + "..."}</p> : <p style={{'fontSize':'0.8rem'}}>Type something to chat!</p>}
                         </div>
-                        <div className='status'>online</div>
                     </div>
                 ))}
 

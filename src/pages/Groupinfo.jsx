@@ -49,7 +49,7 @@ const Groupinfo = () => {
             </Alert> : ""}
             <div className='create_group_section'>
                 <div className='add_user_box'>
-                    <h1>Search to add User</h1>
+                    <h1 style={{'color':'black'}}>Search to add User</h1>
                     <Adduser setMembers={setMembers} />
                 </div>
                 <div className='group_info_details'>
@@ -59,7 +59,7 @@ const Groupinfo = () => {
                         <input className='input_group_name' type='text' placeholder='Group Name' name='group_name' value={groupName} onChange={(e) => setGroupName(e.target.value)}></input>
                         <input className='input_submit' type='submit' value='Create Group' onClick={() => handleSubmit()}></input>
                         <p style={{ "fontSize": "1.3rem" }}>Members:</p>
-                        <div className='members_list'>
+                        <div className='members_list' style={{"overflowY":"scroll"}}>
                             {
                                 members.map((user) => (
                                     <h3 className='grp_user_name'>{user.name}</h3>

@@ -24,6 +24,7 @@ const Searchuser = ({ searchBoxstyle,user }) => {
             console.log(res.data);
             setAlert(true);
             setMsg("Chat Created");
+            window.location.href = '/chat'
         } catch (err) {
             console.log(err);
             setAlert(false);
@@ -60,7 +61,7 @@ const Searchuser = ({ searchBoxstyle,user }) => {
                     {results.filter(user => user.name !== authorisedUser.name).map((user) => (
 
                         <div className='resultedUser'>
-                            <h2>{user.name}</h2>
+                            <h4>{user.name}</h4>
                             <button onClick={() => createChatWithUser(user._id)}>Chat</button>
                         </div>
                     ))}

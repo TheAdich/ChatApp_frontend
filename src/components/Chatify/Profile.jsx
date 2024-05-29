@@ -64,7 +64,7 @@ const Profile = ({user}) => {
     return (
         <div className='profile_section_wrapper'>
             <div className='profile_section'>
-                <h1>Edit profile</h1>
+                <h2>Edit profile</h2>
                 <div className='user_wrapper'>
                     <div className='left_section'>
                         <img src={imageUrl?imageUrl:profileimg} style={{ "width": "8vw", height:"8vw", 'border': '1px solid white', 'borderRadius': '50%' }}></img>

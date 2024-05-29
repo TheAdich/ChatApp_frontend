@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../staticCss/chat.css'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.jpg'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 const Header = ({user,setProfilePageopen}) => {
