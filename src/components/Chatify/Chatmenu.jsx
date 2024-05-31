@@ -83,6 +83,17 @@ const Chatmenu = ({ chat, getId, user, socket }) => {
 
     const postMessage = async (e) => {
         e.preventDefault();
+        function checkUrlOrText(msg) {
+            var urlRegex = /(https?:\/\/[^\s]+)/g;
+            if (urlRegex.test(msg)) {
+              return 'link';
+            } else {
+              return 'text';
+            }
+          }
+          const msgType=checkUrlOrText(msg);
+          //console.log(msgType);
+
         const instance = axios.create({
             'baseURL': `${process.env.REACT_APP_BACKEND}/api/msg`,
             withCredentials: true,
@@ -93,9 +104,10 @@ const Chatmenu = ({ chat, getId, user, socket }) => {
             }
         })
         try {
-            const res = await instance.post('/postmessage', { id: getId, content: msg });
+            const res = await instance.post('/postmessage', { id: getId, content: msg, msgType:msgType });
             // console.log(res.data);
             if (res.data) {
+                console.log(res.data);
                 setDisplayMsg((prevMsgs) => [...prevMsgs, res.data]);
                 scrollToBottom();
                 socket.emit('newMessage', { msg: res.data, room: getId });
@@ -119,7 +131,7 @@ const Chatmenu = ({ chat, getId, user, socket }) => {
                         displayMsg.map((e, ind) => (
                             <div key={ind} className='msg_box' >
                                 <p className='msg_box_senderName'>{e.sender.name}</p>
-                                <p className='msg_box_message'>{e.content}</p>
+                                {!e.msgType || e.msgType==='text'? <p className='msg_box_message'>{e.content}</p>:<a href={e.content} className='msg_box_message'>{e.content}</a>}
                                 <p className='msg_box_time'>{formatDateTime(e.createdAt)}</p>
                             </div>
                         )) : <div className='msg_box'><p>No messages yet</p></div>

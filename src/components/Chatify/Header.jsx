@@ -12,10 +12,14 @@ const Header = ({user,setProfilePageopen}) => {
             <div className='chat_name'>Sharinghan</div>
         </div>
         <div className='chat_toolbar'>
+            <NavLink className='create_grp_btn' to='/videochat'>Start a video call</NavLink>
             <NavLink className='create_grp_btn' to='/creategroup'>Create a group</NavLink>
             <img className='bell' src={user?user.pic:logo}></img>
             <p style={{'cursor':'pointer'}} className='username' onClick={()=>setProfilePageopen((prev)=> !prev)}>{user && user.name}</p>
-            <p className='logout' >Logout</p>
+            <p className='logout' onClick={()=>{
+              sessionStorage.removeItem('jwt');
+              window.location.href='/'
+            }}>Logout</p>
         </div>
     </div>
   )
