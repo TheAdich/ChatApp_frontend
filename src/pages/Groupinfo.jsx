@@ -58,6 +58,7 @@ const Groupinfo = () => {
                         <legend for='group_name' style={{ 'fontSize': '1.4rem' }}>Group Name:</legend>
                         <input className='input_group_name' type='text' placeholder='Group Name' name='group_name' value={groupName} onChange={(e) => setGroupName(e.target.value)}></input>
                         <input className='input_submit' type='submit' value='Create Group' onClick={() => handleSubmit()}></input>
+                        <button className='input_submit' onClick={()=> window.location.href='/chat'}>Back</button>
                         <p style={{ "fontSize": "1.3rem" }}>Members:</p>
                         <div className='members_list' style={{"overflowY":"scroll"}}>
                             {

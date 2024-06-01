@@ -89,6 +89,7 @@ const Groupinfo = () => {
                         <legend for='group_name' style={{ 'fontSize': '1.4rem' }}>Rename Group Name:</legend>
                         <input className='input_group_name' type='text' placeholder='Rename Group Name' value={rename} name='group_name' onChange={(e) => setrename(e.target.value)}></input>
                         <input className='input_submit' type='submit' value='Edit Details' onClick={() => handleSubmit()}></input>
+                        <button className='input_submit' onClick={()=> window.location.href='/chat'}>Back</button>
                         <p style={{ "fontSize": "1.3rem" }}>Group Members:</p>
                         <div className='members_list'>
                             {

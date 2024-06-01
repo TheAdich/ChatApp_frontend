@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
 
 // get token
-async function generateToken (tokenServerUrl, userID) {
+async function generateToken(tokenServerUrl, userID) {
   // Obtain the token interface provided by the App Server
   return await fetch(
     `${tokenServerUrl}/access_token?userID=${userID}&expired_ts=7200`,
@@ -69,10 +69,14 @@ export default function VideoRoom() {
   };
 
   return (
-    <div
-      className="myCallContainer"
-      ref={myMeeting}
-      style={{ width: '100vw', height: '100vh' }}
-    ></div>
+    <React.Fragment>
+      <div
+        className="myCallContainer"
+        ref={myMeeting}
+        style={{ width: '100vw', height: '100vh' }}
+      ></div>
+      <button style={{'position':'absolute', 'top':0, 'left':0, 'cursor':'pointer', 'backgroundColor':'green', 'border':'none', 'outline':'none', 'fontSize':'1.2rem', 'padding':'0.3rem 0.4rem', 'borderRadius':'1rem'}} onClick={()=> window.location.href='/chat'}>Back</button>
+    </React.Fragment>
+
   );
 }
