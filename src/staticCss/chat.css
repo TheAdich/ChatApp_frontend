@@ -153,15 +153,16 @@
 
 .user_chat_window{
     width:70vw;
-    height:90%;
+    height:93%;
     margin-left:2rem;
     background: url('../assets/chatbox.jpg') center/cover no-repeat;
 }
 .user_chat_header{
     display: flex;
-    height:10%;
+    height:8%;
     align-items: center;
     margin-top: 1rem;
+    margin-bottom: 0.3rem;
 }
 .chat_display_section {
     position: relative;
@@ -202,13 +203,26 @@
     height:10%;
     position: relative;
     display: flex;
+    align-items: center;
 }
 
-.chat_type_box>input{
+.msg_file_choose{
+    background-color: #1d1f2b;
+    width:10vw;
+    margin-left: 1vw;
+    cursor: pointer;
+}
+.get_image_view{
+    position: absolute;
+    top:-10vh;
+
+}
+
+.chat_type_box .msg_post{
     width:88%;
-    height:60%;
+    height:70%;
     outline: none;
-    padding:0px 1rem;
+    padding:0.3rem 1rem;
     font-size: 1rem;
     font-family: "Nunito";
     background-color: #303345;
@@ -226,6 +240,7 @@
     font-family: "Nunito";
     border-radius: 0.4rem;
     outline: none;
+    padding:0.3rem 0;
     border:none;
     cursor: pointer;
     margin-top: 0.7rem;
@@ -236,7 +251,7 @@
 .msg_box{
   height: fit-content;  
   background-color: #6586ff;
-  width:fit-content;
+  width:45%;
   margin-bottom:1rem;
   padding:0.2rem 1rem;
   border-radius: 0.3rem;
@@ -244,6 +259,11 @@
 }
 .msg_box_senderName{
     text-align: left;
+}
+.msg_box_message{
+    word-break: break-all;
+    white-space: normal;
+
 }
 .msg_box_time{
     font-size: 0.6rem;
@@ -330,6 +350,21 @@
     padding:0.4rem 0.8rem;
     margin-right: 0.8rem;
     cursor: pointer;
+}
+.edit_send_btn{
+    margin-left: 0rem;
+    background-color: green;
+    font-size: 1rem;
+    outline:none;
+    border:none;
+    border-radius: 0.5rem;
+    padding:0.2rem 0.8rem;
+    margin-right: 0.8rem;
+    cursor: pointer;
+}
+
+.edit_send_btn:hover{
+    background-color: #252837;
 }
 .add_user_box{
     background: url('../assets/sidebar.jpg') center/cover no-repeat;
