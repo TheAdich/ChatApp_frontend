@@ -9,6 +9,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import store, { persistor } from './redux/store';
 import RenamegroupInfo from './pages/RenamegroupInfo';
 import VideoRoom from './pages/VideoRoom';
+import PaymentGateway from './pages/PaymentGateway';
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path='/creategroup' element={<Groupinfo/>}></Route>
             <Route path='/renamegroup' element={<RenamegroupInfo/>}></Route>
             <Route path='/videochat' element={<VideoRoom/>}></Route>
+            <Route path='/payment' element={<PaymentGateway/>}></Route>
           </Routes>
         </BrowserRouter>
       </PersistGate>
