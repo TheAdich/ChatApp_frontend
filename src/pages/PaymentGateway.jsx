@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import axios from 'axios'
 import '../staticCss/chat.css'
 import logo from '../assets/logo.jpg'
+import '../staticCss/chat.css'
 import { setUser } from '../redux/userslice'
 
 const PaymentGateway = () => {
@@ -66,6 +67,10 @@ const PaymentGateway = () => {
 
   return (
     <React.Fragment>
+    <div style={{display:'flex',width:'100%',alignItems:'center',padding:'1rem'}}>
+      <img style={{cursor:'pointer'}}  onClick={()=>window.location.href='/chat'}  src={logo} className='chat_logo'></img>
+      <h1  style={{cursor:'pointer'}} onClick={()=>window.location.href='/chat'}  className='chat_name'>Sharinghan</h1>
+    </div>
         <div style={{padding:'1rem'}}>
             <h1>Payment Gateway</h1>
             <input type='number' style={{color:'black'}} placeholder='Enter Amount' value={amount} onChange={(e)=>setAmount(e.target.value)}></input>
