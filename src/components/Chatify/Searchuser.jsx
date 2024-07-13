@@ -33,6 +33,7 @@ const Searchuser = ({ searchBoxstyle,user }) => {
     }
 
     useEffect(() => {
+        //Query and Results
         if (query.length >= 0) {
             const fetchData = async () => {
                 try {
